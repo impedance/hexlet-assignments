@@ -14,8 +14,9 @@ class Url
     end
 
     def query_params
-      return {} if @url.query.nil?
       result = {}
+      return result if @url.query.nil?
+
       @url.query.split('&').each do |item|
         key, value = item.split('=')
         result[key.to_sym] = value
@@ -32,7 +33,9 @@ class Url
     end
 
     def <=>(other)
-      query_params == other.query_params
+      if query_params == other.query_params && port == other.port
+        0
+      end
     end
 
 end
