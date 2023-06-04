@@ -17,25 +17,19 @@ class Url
       result = {}
       return result if @url.query.nil?
 
-      @url.query.split('&').each do |item|
-        key, value = item.split('=')
+      @url.query.split('&').each do |query_parts|
+        key, value = query_parts.split('=')
         result[key.to_sym] = value
       end
       result
     end
 
     def query_param(key, default_value = nil)
-      if query_params[key]
-        query_params[key]
-      else
-        default_value
-      end
+      query_params.fetch(key, default_value)
     end
 
     def <=>(other)
-      if query_params == other.query_params && port == other.port
-        0
-      end
+      [scheme, host, port, query_params] <=> [other.scheme, other.host, other.port, other.query_params]
     end
 
 end
