@@ -35,6 +35,7 @@ module Model
   end
 
   def attributes
+    puts self.class.attr_options
     @init_attrs
   end
 
@@ -47,7 +48,7 @@ module Model
     when :datetime
       DateTime.parse(value.to_s)
     when :boolean
-      [true, "true", 1, "1"].include?(value)
+      [true, 'true', 1, '1'].include?(value)
     else
       value
     end
