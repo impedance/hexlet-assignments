@@ -3,16 +3,16 @@
 # BEGIN
 module Model
   def self.included(base)
-    base.instance_variable_set(:@attributes, {})
+    base.instance_variable_set(:@attr_options, {})
     base.extend(ClassMethods)
   end
 
   module ClassMethods
-    attr_reader :attributes
+    attr_reader :attr_options
 
     def attribute(name, options = {})
       type = options[:type] || :string
-      @attributes[name] = type
+      @attr_options[name] = type
 
       define_method(name) do
         instance_variable_get("@#{name}")
@@ -24,26 +24,18 @@ module Model
     end
   end
 
-  def initialize(attributes = {})
-    @attributes = attributes
+  def initialize(init_attrs = {})
+    @init_attrs = init_attrs
 
-    self.class.attributes.each do |name, type|
-      value = attributes[name.to_sym]
+    self.class.attr_options.each do |name, type|
+      value = init_attrs[name.to_sym]
       instance_variable_set("@#{name}", convert_value(value, type)) if value
-      @attributes[name.to_sym] = convert_value(value, type) if value
+      @init_attrs[name.to_sym] = convert_value(value, type) if value
     end
   end
 
   def attributes
-    # if @attributes.empty?
-    #   self.class.attributes.each do |name, type|
-    #     value = @attributes[name.to_sym]
-    #     puts value
-    #     # @attributes[name.to_sym] = convert_value(value, type) if value
-    #   end
-    # else
-      @attributes
-    # end
+    @init_attrs
   end
 
   private
