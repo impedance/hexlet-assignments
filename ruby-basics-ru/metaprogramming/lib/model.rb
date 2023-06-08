@@ -27,16 +27,23 @@ module Model
   def initialize(init_attrs = {})
     @init_attrs = init_attrs
 
-    self.class.attr_options.each do |name, type|
-      value = init_attrs[name.to_sym]
-      instance_variable_set("@#{name}", convert_value(value, type)) if value
-      @init_attrs[name.to_sym] = convert_value(value, type) if value
+    self.class.attr_options.each do |type_name, type|
+      value = init_attrs[type_name.to_sym]
+      instance_variable_set("@#{type_name}", convert_value(value, type)) if value
+      @init_attrs[type_name.to_sym] = convert_value(value, type) if value
     end
   end
 
   def attributes
-    puts self.class.attr_options
-    @init_attrs
+    return @init_attrs if @init_attrs.any?
+
+    result = {}
+    self.instance_variables.each do |var|
+      attr_name = var[1..-1].to_sym
+      next if attr_name == :init_attrs
+      result[attr_name] = self.instance_variable_get(var)
+    end
+    result
   end
 
   private
