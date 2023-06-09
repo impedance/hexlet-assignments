@@ -11,7 +11,7 @@ module Model
     attr_reader :attr_options
 
     def attribute(name, options = {})
-      type = options[:type] || :string
+      type = options[:type]
       @attr_options[name] = type
 
       define_method(name) do
