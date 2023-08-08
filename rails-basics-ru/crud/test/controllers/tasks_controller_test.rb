@@ -3,8 +3,6 @@
 require 'test_helper'
 
 class TasksControllerTest < ActionDispatch::IntegrationTest
-
-
   test 'it renders all tasks' do
     get tasks_url
     assert_response :success
