@@ -1,17 +1,11 @@
 # frozen_string_literal: true
 
 require 'test_helper'
-require 'pry'
 
 class TasksControllerTest < ActionDispatch::IntegrationTest
-  # include Rails.application.routes.url_helpers
 
-  # def default_url_options
-  #   { host: 'localhost', port: 3000 } # Replace with your desired host and port
-  # end
 
   test 'it renders all tasks' do
-    # get tasks_path
     get tasks_url
     assert_response :success
   end
