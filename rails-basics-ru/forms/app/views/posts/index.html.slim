@@ -1,0 +1,8 @@
+ul
+  - @posts.each do |post|
+    li
+      h3 = link_to post.title, post_path(post)
+      p = post.body
+      p = post.summary
+
+= link_to 'new ost', new_post_path
