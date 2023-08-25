@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Gemfile
 # https://github.com/heartcombo/simple_form
 gem 'simple_form'
@@ -12,12 +14,11 @@ class CurrencyInput < SimpleForm::Inputs::Base
   end
 end
 
-
 # После установки simple_form можно кастомизировать в инициалайзере
 # config/initializers/simple_form.rb
 SimpleForm.setup do |config|
   config.wrappers :default, class: :input,
-    hint_class: :field_with_hint, error_class: :field_with_errors, valid_class: :field_without_errors do |b|
+                            hint_class: :field_with_hint, error_class: :field_with_errors, valid_class: :field_without_errors do |b|
     ## Extensions enabled by default
     # Any of these extensions can be disabled for a
     # given input by passing: `f.input EXTENSION_NAME => false`.

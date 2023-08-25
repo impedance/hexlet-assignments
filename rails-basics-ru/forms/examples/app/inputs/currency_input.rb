@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CurrencyInput < SimpleForm::Inputs::Base
   def input(kwargs)
     options = merge_wrapper_options(input_html_options, kwargs)
