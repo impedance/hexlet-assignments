@@ -1,18 +1,22 @@
 require "test_helper"
 
 class TasksControllerTest < ActionDispatch::IntegrationTest
+  setup do
+    @task = tasks(:one)
+  end
+
   test "should get show" do
-    get tasks_show_url
+    get task_path(@task)
     assert_response :success
   end
 
   test "should get new" do
-    get tasks_new_url
+    get new_task_path(@task)
     assert_response :success
   end
 
   test "should get edit" do
-    get tasks_edit_url
+    get edit_task_url(@task)
     assert_response :success
   end
 end

@@ -2,6 +2,5 @@
 
 class Status < ApplicationRecord
   # BEGIN
-  
   # END
 end

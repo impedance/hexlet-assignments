@@ -2,6 +2,11 @@
   = @user.name
 
 / BEGIN
+ul
+  - @user.tasks.each do |task|
+    li 
+      p = task.name
+      p = task.description
 
 / END
 hr

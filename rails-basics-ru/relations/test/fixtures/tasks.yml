@@ -3,11 +3,17 @@
 one:
   name: MyString
   description: MyText
-  user: one
-  status: one
+  user_id: 1
+  status_id: 1
 
 two:
   name: MyString
   description: MyText
-  user: two
-  status: two
+  user_id: 2
+  status_id: 2
+
+three:
+  name: MyString
+  description: MyText
+  user_id: 3
+  status_id: 3

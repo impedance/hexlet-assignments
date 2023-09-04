@@ -1,2 +1,8 @@
-h1 Tasks#new
-p Find me in app/views/tasks/new.html.slim
+= content_for :title do
+  = 'New Task'
+
+== render 'form', task: @task, users: @users, statuses: @statuses
+
+hr
+
+= link_to 'Back', :back, class: 'btn btn-outline-primary'
