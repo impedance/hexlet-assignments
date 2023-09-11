@@ -9,8 +9,6 @@ class PostsController < ApplicationController
     @post = Post.find params[:id]
 
     @comment = @post.post_comments.build
-    # not working comments
-    # @comments = @post.post_comments
     @comments = PostComment.where(post_id: @post.id)
   end
 
