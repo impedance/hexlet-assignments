@@ -11,6 +11,7 @@ module App
     Rack::Builder.new do |builder|
       builder.use AdminPolicy
       # BEGIN
+      builder.use Router
       # END
       builder.use Signature
 
