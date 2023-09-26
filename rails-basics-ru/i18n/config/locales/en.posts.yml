@@ -1,7 +1,23 @@
 en:
   posts:
     # BEGIN
-    
+    title: Posts
+    new: New Post
+    back: Back
+    show:
+      body: Text
+      comments: Comments
+    create:
+      success: Post was created.
+      post: Create Post
+    destroy:
+      success: Post was destroyed.
+    update:
+      success: Post was updated.
+    edit:
+      title: Title post
+    placeholder: Enter post title
+  
     # END
 
     comments:

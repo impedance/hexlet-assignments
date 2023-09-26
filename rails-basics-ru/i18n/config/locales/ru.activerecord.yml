@@ -2,6 +2,16 @@ ru:
   activerecord:
     models:
       # BEGIN
+      post:
+        one: Пост
+        few: Посты
+        many: Постов
+        other: Comment
+      comment:
+        few: Комментарий
+        many: Комментарии
+        one: comment
+        other: Comment
       
       # END
       post/comment: Комментарий
@@ -9,7 +19,7 @@ ru:
     attributes:
       post:
         # BEGIN
-        
+        title: Название
         # END
       post/comment:
         body: Содержание
@@ -19,5 +29,6 @@ ru:
         post:
           attributes:
             # BEGIN
-            
+            title: 
+              blank: Должно быть заполнено
             # END

@@ -1,5 +1,11 @@
 ru:
+  show: Показать
+  edit: Изменить
+  destroy: Удалить
+  destroy_confirmation: Серьезно?
+  back: Назад
   hexlet_title: © Хекслет,
   footer_text: " %{year}"
   home_page: Домашняя страница
-  posts: Посты
+  to_home: Домой
+  hexlet_logo: logo

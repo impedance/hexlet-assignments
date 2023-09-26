@@ -1,0 +1,20 @@
+= simple_form_for post do |form|
+  - if post.errors.any?
+    div#error_explanation
+      h2= pluralize(post.errors.count, "error") + " prohibited this post from being saved:"
+      ul
+        - post.errors.each do |error|
+          li= error.full_message
+       
+      
+  .field
+    = form.input :title
+
+  .field
+    = form.input :body
+
+  .field
+    = form.input :published, as: :boolean
+
+  .actions
+    = form.button :submit

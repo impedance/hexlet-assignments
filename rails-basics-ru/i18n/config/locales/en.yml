@@ -37,5 +37,6 @@ en:
   back: Back
   hexlet_title: © Hexlet,
   footer_text: " %{year}"
-  home_page: Home Page
-  posts: Posts
+  home_page: Home page
+  to_home: Home
+  hexlet_logo: logo

@@ -2,7 +2,22 @@
 ru:
   posts:
     # BEGIN
-    
+    title: Посты 
+    new: Новый пост
+    back: Назад
+    show:
+      body: Текст
+      comments: Комментарии
+    create:
+      success: Пост создан.
+      post: Создать Пост
+    destroy:
+      success: Пост удален.
+    edit:
+      title: Название
+    update:
+      success: Пост обновлен.
+    placeholder: Название
     # END
 
     comments:

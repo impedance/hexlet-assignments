@@ -1,8 +1,8 @@
 = content_for :title do
-  = t('.title')
+  = t('posts.new')
 
 == render 'form', post: @post
 
 hr
 
-= link_to t('back'), :back, class: 'btn btn-outline-primary'
+= link_to t('posts.back'), :back, class: 'btn btn-outline-primary'

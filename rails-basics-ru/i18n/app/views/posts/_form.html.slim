@@ -1,0 +1,5 @@
+= simple_form_for post do |f|
+  = f.input :title, placeholder: t('posts.placeholder')
+  = f.input :body
+
+  = f.button :submit, class: 'new_post btn btn-success mt-4 btn-block', value: t('posts.create.post')

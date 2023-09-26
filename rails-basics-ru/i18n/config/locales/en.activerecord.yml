@@ -2,11 +2,19 @@ en:
   activerecord:
     models:
       # BEGIN
+      post:
+        one: Post
+        other: Posts
+      comment:
+        one: Comment
+        other: Комментарий
       
       # END
       post/comment: Comment
     attributes:
       # BEGIN
+      post:
+        title: Title
       
       # END
       post/comment:
@@ -14,8 +22,10 @@ en:
 
     errors:
       models:
-        post:
-          attributes:
-            # BEGIN
-            
-            # END
+          post:
+            attributes:
+              # BEGIN
+              title: 
+                blank: should be filled
+
+              # END

@@ -1,0 +1,19 @@
+
+p
+  strong Name: 
+  = @post.title
+
+p
+  strong Description: 
+  = @post.body
+
+p
+  strong Completed:
+  = @post.published
+
+ul
+  li
+    = link_to t('edit'), edit_post_path(@post)
+   
+  li
+    = link_to t('back'), posts_path
